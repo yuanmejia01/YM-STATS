@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li style="color:black" class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Regresion</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Arial, sans-serif;
+    line-height: 1;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 {
+    background-color: #ffffff;
+    color: black;
+  }
+  .bg-4 {
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{url_for('inicio')}}">Regresion</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="{{url_for('login')}}">
+            <span class="glyphicon glyphicon-log-in"></span> Iniciar sesion
+          </a>
+          </li>
+        <li>
+          <a href="{{url_for('signup')}}">
+            <span class="glyphicon glyphicon-user"></span> Registrarse
+          </a>
+          </li>
+        <li>
+          <a href="https://www.instagram.com/yuanmejiav01/">
+            <span class="glyphicon glyphicon-info-sign"></span> Acerca del creador
+          </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">YM Stats</h3>
+  <p> Esta web te permite realizar varias estudios estadisticos, de manera rapida y sencilla. </p>
+  <a href="{{url_for('linear_data')}}" class="btn btn-default btn-lg">
+    <span class="material-icons">grain</span> Regresion lineal
+  </a>
+  <a href="{{url_for('probabilidad')}}" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-signal"></span> Probabilidad clasica
+  </a>
+  <a href="{{url_for('poisson')}}" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-stats"></span> Distribucion de Poisson
+  </a>
+
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+  <h3 class="margin">Herramientas</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+        <h4>Analisis de regresion</h4>
+      <p>El análisis de la regresión lineal se utiliza para predecir el valor de una variable según el valor de otra. La variable que desea predecir se denomina variable dependiente. La variable que está utilizando para predecir el valor de la otra variable se denomina variable independiente.</p>
+      <!--<img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">-->
+    </div>
+    <div class="col-sm-4">
+        <h4>Probabilidad clasica</h4>
+      <p>La probabilidad clásica predice un resultado en base a todos los posibles sucesos que tenga un evento aleatorio. </p>
+     <!-- <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">-->
+    </div>
+    <div class="col-sm-4">
+      <h4>Distribución de Poisson</h4>
+      <p>Esta distribución estudia la probabilidad de que ocurra un determinado número de eventos durante cierto período de tiempo. Concretamente, se especializa en la probabilidad de ocurrencia de sucesos con probabilidades muy pequeñas, o sucesos «raros».</p>
+      <!--<img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">-->
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Yuan Mejia 1099392<br>
+    Logica de Programacion INS203<br>
+    <a href="https://github.com/yuanmejia01">My Github</a><br>YM Stats ©</p>
+</footer>
+</body>
+
+</html>
